@@ -15,4 +15,4 @@ COPY src ./src
 # 编译打包：生成可执行 Jar 包（-DskipTests 跳过测试，加速构建）
 RUN mvn package -DskipTests
 
-CMD ["java -jar .\user-center-backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod"]
+CMD ["java","-jar",".\user-center-backend-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
