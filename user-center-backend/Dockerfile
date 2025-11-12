@@ -1,6 +1,6 @@
 # ==================== 阶段 1：构建阶段（使用 Maven 镜像编译打包）====================
 # 基础镜像：包含 JDK 8 和 Maven，用于编译代码
-FROM maven:3.8.8-openjdk-8 AS builder
+FROM maven:3.8-openjdk-8 AS builder
 
 # 设置工作目录（容器内的目录）
 WORKDIR /app
@@ -15,4 +15,4 @@ COPY src ./src
 # 编译打包：生成可执行 Jar 包（-DskipTests 跳过测试，加速构建）
 RUN mvn package -DskipTests
 
-CMD ["java","-jar",".\user-center-backend-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
+CMD ["java","-jar","./app/target/user-center-backend-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
