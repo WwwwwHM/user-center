@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: 'jdbc:mysql://sh-cdb-8bsrve9a.sql.tencentcdb.com:23123/user_center'
+    username: root
+    password: WHM19990504
+  # session 失效时间 1天有86400秒
+  session:
+    timeout: 86400
+#  sql:
+#    init:
+#      mode: never
